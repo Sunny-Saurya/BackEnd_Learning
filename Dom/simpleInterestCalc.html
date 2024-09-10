@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <input id="amount" type="text" placeholder="Enter Amount "> <br> <br>
+    <input id="roi" type="text" placeholder="Your ROI "> <br> <br>
+    <input id="time" type="text" placeholder="Duration"> <br><br>
+    <button id="calc" onclick="calculate()">Calculate</button>
+    <div class="result"></div>
+</body>
+<script>
+    const amount = document.getElementById("amount");
+    const roi = document.getElementById("roi");
+    const time = document.getElementById("time");
+    const result = document.querySelector(".result"); 
+
+    function calculate() {
+        let amountValue = parseFloat(amount.value);
+        let roiValue = parseFloat(roi.value);
+        let timeValue = parseFloat(time.value);
+
+        // Ensure the inputs are valid numbers
+        if (isNaN(amountValue) || isNaN(roiValue) || isNaN(timeValue)) {
+            result.innerText = "Please enter valid numbers!";
+            return;
+        }
+
+        let interest = (amountValue * roiValue * timeValue) / 100;
+        let total = amountValue + interest;
+
+        // Display the result
+        result.innerText = `Interest: ${interest} | Total: ${total}`;
+    }
+</script>
+</html>
