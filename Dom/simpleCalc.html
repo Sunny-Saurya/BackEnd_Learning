@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>My First Page</h1>
+     <input id="input1" type="text" placeholder="First Number"> <br>
+     <input id="input2" type="text" placeholder="Second Number"> <br>
+     <button onclick="sum()">Calculate sum</button>
+     <div id="finalSum"></div>
+</body>
+
+<script>
+    const input1 =  document.getElementById('input1');
+    const input2 =  document.getElementById('input2');
+    const finalSum = document.getElementById('finalSum');
+
+    function sum(){
+        const num1 = parseInt(input1.value);
+        const num2 = parseInt(input2.value);
+        const total = num1 + num2;
+        finalSum.innerText = `The sum is ${total}`;
+        
+    }
+</script>
+</html>
